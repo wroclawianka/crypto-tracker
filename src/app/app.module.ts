@@ -1,16 +1,18 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 
 import {CoinApiService} from "./services/coin-api.service";
 
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatSliderModule} from '@angular/material/slider';
+import { SearchComponent} from "./components/search/search.component";
+
+import { MatSliderModule } from '@angular/material/slider';
 import {_MatMenuDirectivesModule, MatMenuModule} from "@angular/material/menu";
 import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
@@ -19,7 +21,8 @@ import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,5 +42,4 @@ import {MatInputModule} from "@angular/material/input";
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
