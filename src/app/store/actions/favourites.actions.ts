@@ -11,4 +11,3 @@ export class EditFavourites implements Action {
 }
 
 export type FavouritesAction = EditFavourites;
-
