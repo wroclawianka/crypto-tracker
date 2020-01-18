@@ -20,7 +20,6 @@ import {AppComponent} from './app.component';
 import {SearchComponent} from "./components/home-page/search/search.component";
 import {HomePageComponent} from './components/home-page/home-page.component';
 import {EditFavouritesComponent} from './components/edit-favourites/edit-favourites.component';
-import {FavouritesComponent} from "./components/home-page/favourites/favourites.component";
 
 import {CoinApiService} from "./services";
 
@@ -45,8 +44,7 @@ const appRoutes: Routes = [
     AppComponent,
     SearchComponent,
     HomePageComponent,
-    EditFavouritesComponent,
-    FavouritesComponent,
+    EditFavouritesComponent
   ],
   imports: [
     BrowserModule,

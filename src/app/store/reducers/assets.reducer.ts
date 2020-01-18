@@ -2,11 +2,13 @@ import * as fromAssets from "../actions/assets.actions";
 import {Asset} from "../../models/asset.model";
 
 export interface AssetsState {
-  assets: Array<Asset>
+  assets: Array<Asset>;
+  loaded: boolean
 }
 
 export const initialState = {
-  assets: []
+  assets: [],
+  loaded: false
 };
 
 export function reducer(
@@ -15,14 +17,10 @@ export function reducer(
 ): AssetsState {
   switch (action.type) {
     case (fromAssets.SEARCH): {
+      let assets = state.assets.filter((asset) => new RegExp(action.payload).test(asset.name));
       return {
         ...state,
-      }
-    }
-    case (fromAssets.FETCH_ASSETS): {
-      return {
-        ...state,
-          assets: []
+        assets: assets
       }
     }
     case (fromAssets.FETCH_ASSETS_SUCCESS): {
@@ -32,6 +30,7 @@ export function reducer(
       return {
         ...state,
         assets: assets,
+        loaded: true
       }
     }
     default: {
