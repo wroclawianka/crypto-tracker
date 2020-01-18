@@ -34,4 +34,8 @@ export class SearchComponent {
     e.preventDefault();
     this.store.dispatch(new fromStore.Search(this.searchValue))
   }
+
+  editFavourites(asset) {
+    this.store.dispatch((new fromStore.EditFavourites(asset)))
+  }
 }

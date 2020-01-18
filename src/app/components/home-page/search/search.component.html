@@ -9,13 +9,9 @@
   </form>
 
   <mat-selection-list #assets>
-    <mat-list-option *ngFor="let asset of assets$">
+    <mat-list-option *ngFor="let asset of assets$" (click)="editFavourites(asset)">
       <span>{{asset.name}}</span>
     </mat-list-option>
   </mat-selection-list>
-
-  <p>
-    Options selected: {{assets.selectedOptions.selected.length}}
-  </p>
 </div>
 <ng-template #loading>Loading...</ng-template>
