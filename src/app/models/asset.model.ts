@@ -1,3 +1,5 @@
 export class Asset {
-  //TODO
+  id: string;
+  name: string;
+  price: string
 }
