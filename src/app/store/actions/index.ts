@@ -1,2 +1,2 @@
 export * from './assets.actions';
-export * from './favourites.actions';
+export * from "./favourites.actions";
