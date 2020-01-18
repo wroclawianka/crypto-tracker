@@ -25,7 +25,8 @@ import {FavouritesComponent} from "./components/home-page/favourites/favourites.
 import {CoinApiService} from "./services";
 
 import {StoreModule} from '@ngrx/store';
-import {reducers} from "./store";
+import {EffectsModule} from "@ngrx/effects";
+import {reducers, effects} from "./store";
 
 const appRoutes: Routes = [
   {
@@ -66,7 +67,8 @@ const appRoutes: Routes = [
       appRoutes
     ),
     /*Store */
-    StoreModule.forFeature('assets', reducers)
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot(effects)
   ],
   providers: [
     CoinApiService
