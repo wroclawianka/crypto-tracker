@@ -6,15 +6,13 @@ import * as fromStore from '../../../store'
 
 @Component({
   selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  templateUrl: './search.component.html'
 })
 export class SearchComponent {
   searchValue: string;
   assets$: Observable<Array<Asset>>;
 
   constructor(private store: Store<fromStore.AssetsState>) {
-    this.searchValue = "";
   }
 
   ngOnInit() {
@@ -25,12 +23,7 @@ export class SearchComponent {
   }
 
   onKey(e) {
-    this.searchValue = e.target.value;
+    e.preventDefault();
+    this.store.dispatch(new fromStore.Search(e.target.value))
   }
-
-  searchAssets() {
-    debugger;
-    // this.store.dispatch(Search(this.searchValue))
-  }
-
 }

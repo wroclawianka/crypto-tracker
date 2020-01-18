@@ -1,12 +1,11 @@
 <div>
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
+  <form class="search-form">
+    <mat-form-field>
       <label>
         <input matInput placeholder="Search Currency" value="{{searchValue}}" (keyup)="onKey($event)">
       </label>
     </mat-form-field>
   </form>
-  <button mat-button (click)="searchAssets()">Search</button>
 
   <mat-selection-list #assets>
     <mat-list-option *ngFor="let asset of assets$">
