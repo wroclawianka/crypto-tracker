@@ -4,24 +4,28 @@ import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 
 import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-
-import {CoinApiService} from "./services/coin-api.service";
 
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-
-import {SearchComponent} from "./components/home-page/search/search.component";
-
 import {MatSliderModule} from '@angular/material/slider';
 import {_MatMenuDirectivesModule, MatMenuModule} from "@angular/material/menu";
 import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
 
 import {RouterModule, Routes} from '@angular/router';
+
+import {AppComponent} from './app.component';
+import {SearchComponent} from "./components/home-page/search/search.component";
 import {HomePageComponent} from './components/home-page/home-page.component';
 import {EditFavouritesComponent} from './components/edit-favourites/edit-favourites.component';
+import {FavouritesComponent} from "./components/home-page/favourites/favourites.component";
+
+import {CoinApiService} from "./services";
+
+import {StoreModule} from '@ngrx/store';
+import {reducers} from "./store";
 
 const appRoutes: Routes = [
   {
@@ -41,11 +45,13 @@ const appRoutes: Routes = [
     SearchComponent,
     HomePageComponent,
     EditFavouritesComponent,
+    FavouritesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    /* Material UI */
     NoopAnimationsModule,
     MatSliderModule,
     _MatMenuDirectivesModule,
@@ -54,9 +60,13 @@ const appRoutes: Routes = [
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
+    MatButtonModule,
+    /*Router */
     RouterModule.forRoot(
       appRoutes
-    )
+    ),
+    /*Store */
+    StoreModule.forFeature('assets', reducers)
   ],
   providers: [
     CoinApiService
