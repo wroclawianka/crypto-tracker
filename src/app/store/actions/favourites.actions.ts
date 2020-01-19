@@ -7,7 +7,6 @@ export class EditFavourites implements Action {
   readonly type: string = EDIT_FAVOURITES;
 
   constructor(public payload: any) {
-    console.log("ACTION " + EDIT_FAVOURITES)
   };
 }
 
@@ -15,7 +14,6 @@ export class RemoveFavourite implements Action {
   readonly type: string = REMOVE_FAVOURITE;
 
   constructor(public payload: any) {
-    console.log("ACTION " + REMOVE_FAVOURITE)
   };
 }
 

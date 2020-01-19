@@ -1,5 +1,5 @@
 export class Asset {
   id: string;
   name: string;
-  price: string
+  price: string;
 }
