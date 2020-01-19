@@ -25,7 +25,7 @@ export function reducer(
     }
     case (fromAssets.FETCH_ASSETS_SUCCESS): {
       let assets = action.payload.map(asset => {
-        return {id: asset.asset_id, name: asset.name, price: asset.price_usd}
+        return {id: asset.asset_id, name: asset.name || asset.asset_id, price: asset.price_usd}
       });
       return {
         ...state,
