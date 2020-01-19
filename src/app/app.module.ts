@@ -26,6 +26,8 @@ import {CoinApiService} from "./services";
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from "@ngrx/effects";
 import {reducers, effects} from "./store";
+import { FavouritesComponent } from './components/home-page/favourites/favourites.component';
+import {MatTableModule} from "@angular/material/table";
 
 const appRoutes: Routes = [
   {
@@ -44,7 +46,8 @@ const appRoutes: Routes = [
     AppComponent,
     SearchComponent,
     HomePageComponent,
-    EditFavouritesComponent
+    EditFavouritesComponent,
+    FavouritesComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +69,8 @@ const appRoutes: Routes = [
     ),
     /*Store */
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot(effects)
+    EffectsModule.forRoot(effects),
+    MatTableModule
   ],
   providers: [
     CoinApiService
