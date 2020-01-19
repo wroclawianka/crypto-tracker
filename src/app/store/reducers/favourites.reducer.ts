@@ -17,7 +17,9 @@ export function reducer(
   switch (action.type) {
     case (fromFav.EDIT_FAVOURITES): {
       let asset = action.payload;
-      let favIndex = state.data.findIndex(item => item.id === asset.id);
+      let favIndex = state.data.findIndex(item => {
+        return item.id === asset.id
+      });
       (favIndex) ? state.data.push(action.payload) : state.data.splice(favIndex, 1);
       return {
         ...state,
