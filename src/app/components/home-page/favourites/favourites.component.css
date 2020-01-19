@@ -1,0 +1,12 @@
+table {
+  width: 100%;
+}
+
+tr.mat-footer-row {
+  font-weight: bold;
+}
+
+.edit-favourites {
+  float: right;
+  margin-bottom: 8px;
+}
