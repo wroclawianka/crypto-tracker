@@ -1,1 +1,8 @@
-<p>edit-favourites works!</p>
+<mat-list>
+  <mat-list-item *ngFor="let fav of favourites$" (click)="removeElement(fav.id)">
+    <button mat-icon-button color="primary" class="fav-button">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <span>{{fav.name}}</span>
+  </mat-list-item>
+</mat-list>

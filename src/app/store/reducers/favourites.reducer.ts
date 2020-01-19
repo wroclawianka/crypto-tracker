@@ -16,10 +16,17 @@ export function reducer(
 ): FavState {
   switch (action.type) {
     case (fromFav.EDIT_FAVOURITES): {
-      let favIndex = state.data.findIndex(item => {
-        return item.id === action.payload.id
-      });
+      let asset = action.payload;
+      let favIndex = state.data.findIndex(item => item.id === asset.id);
       (favIndex) ? state.data.push(action.payload) : state.data.splice(favIndex, 1);
+      return {
+        ...state,
+      }
+    }
+    case (fromFav.REMOVE_FAVOURITE): {
+      let id = action.payload;
+      let favIndex = state.data.findIndex(item => item.id === id);
+      state.data.splice(favIndex, 1);
       return {
         ...state,
       }

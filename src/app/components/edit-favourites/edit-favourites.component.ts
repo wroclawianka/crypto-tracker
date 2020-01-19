@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Observable} from "rxjs";
+import {Store} from "@ngrx/store";
+import * as fromStore from "../../store";
 
 @Component({
   selector: 'app-edit-favourites',
@@ -6,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-favourites.component.css']
 })
 export class EditFavouritesComponent implements OnInit {
+  favourites$: Observable<Array<any>>;
 
-  constructor() { }
+  constructor(private store: Store<fromStore.AssetsState>) {
+  }
 
   ngOnInit() {
+    this.store.select<any>('favourites').subscribe(state => {
+      this.favourites$ = state.data
+    })
+  }
+
+  removeElement(id) {
+    this.store.dispatch((new fromStore.RemoveFavourite(id)))
   }
 
 }
