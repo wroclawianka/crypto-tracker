@@ -1,7 +1,7 @@
 <mat-list>
   <mat-list-item *ngFor="let fav of favourites$" (click)="removeElement(fav.id)">
     <button mat-icon-button color="primary" class="fav-button">
-      <mat-icon>favorite</mat-icon>
+      <mat-icon>indeterminate_check_box</mat-icon>
     </button>
     <span>{{fav.name}}</span>
   </mat-list-item>
