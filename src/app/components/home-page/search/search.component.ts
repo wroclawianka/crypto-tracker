@@ -23,7 +23,7 @@ export class SearchComponent {
       this.loaded$ = state.loaded;
       this.searchValue =  "";
     });
-    this.store.dispatch(new fromStore.FetchAssets())
+    this.store.dispatch(new fromStore.FetchAssets(null))
   }
 
   onKey(e) {
