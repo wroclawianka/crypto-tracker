@@ -31,6 +31,7 @@ import {reducers, effects} from "./store";
 import { HeaderComponent } from './components/header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {MatCardModule} from "@angular/material/card";
 
 const appRoutes: Routes = [
   {
@@ -76,7 +77,8 @@ const appRoutes: Routes = [
     EffectsModule.forRoot(effects),
     MatTableModule,
     MatToolbarModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatCardModule
   ],
   providers: [
     CoinApiService

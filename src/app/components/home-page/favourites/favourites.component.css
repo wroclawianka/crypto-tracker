@@ -1,3 +1,16 @@
+.fav-container {
+  padding-bottom: 20px
+}
+
+.header {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.title {
+  padding-left: 20px;
+}
+
 table {
   width: 100%;
 }

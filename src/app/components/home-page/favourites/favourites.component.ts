@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import * as fromStore from "../../../store";
 import {Asset} from "../../../models/asset.model";
+import { faBookmark, faPen } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-favourites',
@@ -10,6 +11,8 @@ import {Asset} from "../../../models/asset.model";
 })
 export class FavouritesComponent implements OnInit {
   favourites: Array<Asset>;
+  faBookmark = faBookmark;
+  faPen = faPen;
 
   constructor(private store: Store<fromStore.AssetsState>) {
   }
