@@ -1,5 +1,14 @@
-<mat-toolbar>
-  <a href="/">
+<mat-toolbar color="accent">
+  <span>
+      <a href="/">
     <fa-icon [icon]="faBitcoin"></fa-icon>
     Crypto Tracker</a>
+  </span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+  <span class="right-panel">
+    <a href="/edit-favourites"><fa-icon [icon]="faBookmark"></fa-icon></a>
+  </span>
 </mat-toolbar>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faBitcoin } from '@fortawesome/free-brands-svg-icons';
+import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,7 @@ import { faBitcoin } from '@fortawesome/free-brands-svg-icons';
 })
 export class HeaderComponent implements OnInit {
   faBitcoin  = faBitcoin;
+  faBookmark = faBookmark;
 
   constructor() { }
 
